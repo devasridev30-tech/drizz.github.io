@@ -1,0 +1,83 @@
+/* Brand font — drop licensed Rilvan files into public/fonts to activate.
+   Falls back to Playfair Display (loaded from Google Fonts) until then. */
+@font-face {
+  font-family: 'Rilvan';
+  src: url('/fonts/Rilvan-Regular.woff2') format('woff2'),
+       url('/fonts/Rilvan-Regular.woff') format('woff');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --ink:#20232b;
+  --ink-dim:#666f7d;
+  --panel:rgba(255,255,255,0.72);
+  --panel-strong:rgba(255,255,255,0.92);
+  --line:rgba(32,35,43,0.10);
+  --coral:#FF6B6B;
+  --sun:#FFC93C;
+  --mint:#06D6A0;
+  --grape:#9B5DE5;
+  --sky:#4FC3F7;
+  --pink:#FF8FAB;
+  --gold:#FFC93C;
+  --cyan:#4FC3F7;
+  --rose:#FF6B6B;
+  --star:#fff8e1;
+  --sky-1:#7ec8f2;
+  --sky-2:#a685e2;
+  --sky-3:#ffd59e;
+  --btn-ink:#241a2e;
+  --radius:20px;
+}
+
+/* ---------------- Theme palettes ---------------- */
+/* Light — explicit restatement of the default :root palette */
+[data-theme="light"]{
+  --ink:#20232b; --ink-dim:#666f7d; --panel:rgba(255,255,255,0.72); --panel-strong:rgba(255,255,255,0.92);
+  --line:rgba(32,35,43,0.10); --coral:#FF6B6B; --sun:#FFC93C; --mint:#06D6A0; --grape:#9B5DE5; --sky:#4FC3F7;
+  --pink:#FF8FAB; --gold:#FFC93C; --cyan:#4FC3F7; --rose:#FF6B6B; --star:#fff8e1;
+  --sky-1:#7ec8f2; --sky-2:#a685e2; --sky-3:#ffd59e; --btn-ink:#241a2e;
+}
+
+/* Dark */
+[data-theme="dark"]{
+  --ink:#f5f7fa; --ink-dim:#c3cad6; --panel:rgba(8,10,16,0.58); --panel-strong:rgba(8,10,16,0.78);
+  --line:rgba(255,255,255,0.16); --coral:#FF6B6B; --sun:#FFD166; --mint:#2FE6B8; --grape:#B48CEB; --sky:#5FC9F8;
+  --pink:#FF8FAB; --gold:#FFD166; --cyan:#5FC9F8; --rose:#FF6B6B; --star:#fff8e1;
+  --sky-1:#12141b; --sky-2:#1a1d26; --sky-3:#20242f; --btn-ink:#1a1420;
+}
+
+/* Butter & Green — from the palette inspiration board */
+[data-theme="butter"]{
+  --ink:#013e37; --ink-dim:#3f6a61; --panel:rgba(255,239,179,0.55); --panel-strong:rgba(255,239,179,0.88);
+  --line:rgba(1,62,55,0.18); --coral:#f2b705; --sun:#ffefb3; --mint:#0c5b50; --grape:#013e37; --sky:#0c5b50;
+  --pink:#ffe08a; --gold:#f2b705; --cyan:#0c5b50; --rose:#013e37; --star:#ffefb3;
+  --sky-1:#ffefb3; --sky-2:#fde49a; --sky-3:#013e37; --btn-ink:#013e37;
+}
+
+/* Cream Vanilla & Cherry Cola — from the palette inspiration board */
+[data-theme="cherry"]{
+  --ink:#3a0000; --ink-dim:#7a3030; --panel:rgba(239,230,221,0.6); --panel-strong:rgba(239,230,221,0.9);
+  --line:rgba(154,0,2,0.18); --coral:#c23b2f; --sun:#efe6dd; --mint:#9a0002; --grape:#9a0002; --sky:#c23b2f;
+  --pink:#efd9c9; --gold:#efe6dd; --cyan:#c23b2f; --rose:#9a0002; --star:#efe6dd;
+  --sky-1:#efe6dd; --sky-2:#e3cbb9; --sky-3:#9a0002; --btn-ink:#3a0000;
+}
+
+*{box-sizing:border-box;}
+html,body,#root{margin:0;padding:0;min-height:100%;}
+body{
+  font-family:'IBM Plex Sans', sans-serif;
+  color:var(--ink);
+  background:linear-gradient(150deg, var(--sky-1), var(--sky-2) 55%, var(--sky-3));
+  overflow-x:hidden;
+  transition:background 1.2s ease;
+}
+h1,h2,h3{margin:0;}
+button{font-family:inherit; cursor:pointer;}
+::selection{background:rgba(255,201,60,0.45);}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
